@@ -12,9 +12,9 @@ int _printf(const char *format, ...)
 	va_list arg;
 
 	if (!format)
-        {
-            return (-1);
-        }
+	{
+		return (-1);
+	}
 
 	va_start(arg, format);
 	string = format;
