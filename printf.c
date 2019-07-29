@@ -29,12 +29,13 @@ int _printf(const char *format, ...)
 			aux = string[i];
 			if (aux != '%')
 			{
-				cont += function_manager(aux, arg);
+				cont = cont + function_manager(aux, arg);
 				i++;
 				aux = string[i];
 			}
 		}
 		_putchar(aux);
+		cont++;
 		i++;
 	}
 	va_end(arg);
