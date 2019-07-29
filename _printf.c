@@ -8,17 +8,15 @@
 int _printf(const char *format, ...)
 {
 	const char *string;
-	int cont = 0, i = 0;
+	int cont = 0, i = 0, cont_fm = 0;
 	va_list arg;
 
 	if (!format)
 	{
 		return (-1);
 	}
-
 	va_start(arg, format);
 	string = format;
-
 	while (i < _strlen((char *)string) && *string != '\0')
 	{
 		char aux = string[i];
@@ -27,13 +25,21 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			aux = string[i];
+			if (aux == '\0')
+			{
+				return (-1);
+			}
 			if (aux != '%')
 			{
-				cont = cont + function_manager(aux, arg);
-				i++;
-				aux = string[i];
+				cont_fm = 0;
+				cont_fm = function_manager(aux, arg);
+				if (cont_fm != 0)
+				{	i++;
+					aux = string[i];
+				}
 			}
 		}
+		cont = cont + cont_fm;
 		_putchar(aux);
 		cont++;
 		i++;
