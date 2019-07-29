@@ -53,7 +53,7 @@ void _puts(char *str)
  *@base: base to transform num
  *Return: numbert into char pointer
  */
-char *convert_to(char representation[], int num, int base)
+char *convert_to(char representation[], unsigned int num, int base)
 {
 	char *ptr;
 	int mod = 0;
