@@ -13,7 +13,12 @@ int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
-
+/**
+ *_strlen - reset number
+ *Description: This function return a length for some string
+ *@s: pointer char
+ *Return: int length
+ */
 int _strlen(char *s)
 {
 	int len = 0;
@@ -24,6 +29,12 @@ int _strlen(char *s)
 	}
 	return (len);
 }
+/**
+ *_puts - print string
+ *Description: print some string
+ *@str: pointer char
+ *Return: Nothing
+ */
 void _puts(char *str)
 {
 	int i;
@@ -33,9 +44,17 @@ void _puts(char *str)
 		_putchar(str[i]);
 	}
 }
-char *convert_to(unsigned int num, int base)
+/**
+ *convert_to - convert numbers
+ *Description: This function convert numbers to other formats
+ *decimal, octal, hexadecimal, binary etc..
+ *@representation: char representation[] = "0123456789ABCDEF";
+ *@num: num to tranasform
+ *@base: base to transform num
+ *Return: numbert into char pointer
+ */
+char *convert_to(char representation[], int num, int base)
 {
-	char representation[] = "0123456789ABCDEF";
 	char *ptr;
 	int mod = 0;
 
