@@ -15,40 +15,45 @@ int function_manager(char c, va_list arg)
 	cont = _switch(c, arg);
 	return (cont);
 }
-
+/**
+ *_switch - switch
+ *@c: character to find
+ *@arg: va_list type
+ *Description: This function evaluate cases
+ *Return: count of printed characters
+ */
 int _switch(char c, va_list arg)
 {
-	int cont_characters = 0, d = 0;
-	unsigned int i;
-	char *s;
+	int cont = 0;
 
 	switch (c)
 	{
+		case 'b':
+			cont += print_unsign(arg, 2);
+			break;
 		case 'c':
-			i = va_arg(arg, int);
-			_putchar(i);
+			cont += print_character(arg);
 			break;
 		case 'd':
-			d = va_arg(arg, int);
-			if (d < 0)
-			{
-				d = -(d);
-				_putchar('-');
-			}
-			_puts(convert_to("0123456789ABCDEF", d, 10));
+			cont += print_sign(arg, 10);
+			break;
+		case 'i':
+			cont += print_sign(arg, 10);
 			break;
 		case 'o':
-			i = va_arg(arg, unsigned int);
-			_puts(convert_to("0123456789ABCDEF", i, 8));
+			cont += print_unsign(arg, 8);
 			break;
 		case 's':
-			s = va_arg(arg, char *);
-			_puts(s);
+			cont += print_string(arg);
+			break;
+		case 'u':
+			cont += print_unsign(arg, 10);
 			break;
 		case 'x':
-			i = va_arg(arg, unsigned int);
-			_puts(convert_to("0123456789ABCDEF", i, 16));
+			cont += print_base16_upper_lower(arg, "0123456789abcdef");
 			break;
+		case 'X':
+			cont += print_base16_upper_lower(arg, "0123456789ABCDEF");
 	}
-	return (cont_characters);
+	return (cont);
 }
