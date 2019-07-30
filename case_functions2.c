@@ -49,5 +49,5 @@ int print_ptr(va_list arg)
 		_putchar(c[i]);
 		i++;
 	}
-	return (0);
+	return (i);
 }
