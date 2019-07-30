@@ -43,6 +43,12 @@ int _switch(char c, va_list arg)
 		case 'o':
 			cont += print_unsign(arg, 8);
 			break;
+		case 'r':
+			cont += print_rev(arg);
+			break;
+		case 'R':
+			cont += print_rot13(arg);
+			break;
 		case 's':
 			cont += print_string(arg);
 			break;
@@ -54,6 +60,7 @@ int _switch(char c, va_list arg)
 			break;
 		case 'X':
 			cont += print_base16_upper_lower(arg, "0123456789ABCDEF");
+			break;
 	}
 	return (cont);
 }

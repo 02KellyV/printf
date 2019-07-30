@@ -12,7 +12,11 @@ int print_character(va_list arg);
 int print_sign(va_list arg, int base);
 int print_unsign(va_list arg, int base);
 int print_string(va_list arg);
+int print_ptr(va_list arg);
+int print_rot13(va_list arg);
+int print_rev(va_list arg);
 int print_base16_upper_lower(va_list arg, char *representation);
 int loop_format(va_list arg, const char *string);
 int call_function_manager(char aux, va_list arg);
+int check_percent(int *flag, char aux);
 #endif
