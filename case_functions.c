@@ -22,7 +22,7 @@ int print_character(va_list arg)
  */
 int print_sign(va_list arg, int base)
 {
-	int i, cont;
+	int i = 0, cont = 0;
 	char *s;
 
 	i = va_arg(arg, int);
@@ -30,10 +30,11 @@ int print_sign(va_list arg, int base)
 	{
 		i = -(i);
 		_putchar('-');
+		cont += 1;
 	}
 	s = convert_to("0123456789ABCDEF", i, base);
 	_puts(s);
-	cont = _strlen(s);
+	cont += _strlen(s);
 	return (cont);
 }
 /**
