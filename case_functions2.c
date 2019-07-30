@@ -3,7 +3,6 @@
 /**
  * print_ptr - print_base16_upper_lower
  * @arg: va_list parameter
- * @base: base 10, 8 16, etc...
  * Description: This function print address pointer
  * in representation parameter for print hexadecimal format
  * Return: address pointer
@@ -23,7 +22,7 @@ int print_ptr(va_list arg)
 	while (buffr)
 	{
 		buffr /= 16;
-		count ++;
+		count++;
 	}
 	c[count + 1] = '\0';
 	while (dec > 0)
@@ -39,7 +38,7 @@ int print_ptr(va_list arg)
 		{
 			c[count] = ((char)(n + 'W'));
 		}
-		count --;
+		count--;
 		dec /= 16;
 	}
 	c[0] = '0';
