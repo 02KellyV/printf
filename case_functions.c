@@ -48,6 +48,7 @@ int print_unsign(va_list arg, int base)
 	int cont = 0;
 	unsigned int i;
 	char *s;
+
 	i = va_arg(arg, unsigned int);
 	s = convert_to("0123456789ABCDEF", i, base);
 	_puts(s);
