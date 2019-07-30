@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
  */
 int loop_format(va_list arg, const char *string)
 {
-	int i = 0, flag = 0, cont_fm = 0, cont = 0;
+	int i = 0, flag = 0, cont_fm = 0, cont = 0, check_per = 0;
 
 	while (i < _strlen((char *)string) && *string != '\0')
 	{
@@ -50,7 +50,7 @@ int loop_format(va_list arg, const char *string)
 			} else
 			{
 				cont_fm = call_function_manager(aux, arg);
-				if (cont_fm != 0)
+				if (cont_fm > 0)
 				{
 					i++;
 					aux = string[i];
@@ -58,12 +58,12 @@ int loop_format(va_list arg, const char *string)
 				}
 			}
 		}
-		if (check_percent(&flag, aux) == 0)
-		{
-			_putchar(aux);
-		}
-		cont++;
+		check_per = check_percent(&flag, aux);
+		cont += check_per;
+		if (check_per == 0 && aux != '\0')
+			cont += _putchar(aux);
 		i++;
+		check_per = 0;
 	}
 	return (cont);
 }
