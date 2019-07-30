@@ -98,4 +98,3 @@ int print_base16_upper_lower(va_list arg, char *representation)
 	return (cont);
 
 }
-
