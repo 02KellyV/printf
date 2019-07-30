@@ -58,10 +58,6 @@ char *convert_to(char representation[], unsigned int num, int base)
 	int mod = 0;
 
 	ptr = malloc(sizeof(char) * _strlen(representation));
-	if (ptr == NULL)
-	{
-		exit(0);
-	}
 	do {
 		mod = num % base;
 		*--ptr = representation[mod];
