@@ -31,10 +31,9 @@ int _printf(const char *format, ...)
  */
 int loop_format(va_list arg, const char *string)
 {
-	int len = 0, i = 0, flag = 0, cont_fm = 0, cont = 0;
+	int i = 0, flag = 0, cont_fm = 0, cont = 0;
 
-	len = _strlen((char *)string);
-	while (i < len && *string != '\0')
+	while (i < _strlen((char *)string) && *string != '\0')
 	{
 		char aux = string[i];
 
@@ -43,6 +42,8 @@ int loop_format(va_list arg, const char *string)
 			i++;
 			flag++;
 			aux = string[i];
+			if (aux == '\0')
+				return (-1);
 			if (aux == '%')
 			{
 				flag++;
@@ -57,11 +58,7 @@ int loop_format(va_list arg, const char *string)
 				}
 			}
 		}
-		if (flag == 2 && aux == '%')
-		{
-			_putchar('%');
-			flag = 0;
-		} else
+		if (check_percent(&flag, aux) == 0)
 		{
 			_putchar(aux);
 		}
@@ -70,6 +67,28 @@ int loop_format(va_list arg, const char *string)
 	}
 	return (cont);
 }
+/**
+ * check_percent - call function manager
+ *@flag: value by reference
+ *@aux: character
+ *Description: This function print % pear
+ *Return: 1 if % is printed
+ */
+int check_percent(int *flag, char aux)
+{
+	int tmp_flag;
+	int cont = 0;
+
+	tmp_flag = *flag;
+	if (tmp_flag == 2 && aux == '%')
+	{
+		_putchar('%');
+		tmp_flag = 0;
+		cont = 1;
+	}
+	return (cont);
+}
+
 /**
  * call_function_manager - call function manager
  *@aux: character parameter

@@ -20,6 +20,12 @@ int print_ptr(va_list arg)
 	count = 1;
 	i = 0;
 
+	if (!dec)
+	{
+		_puts("(neil)");
+		return (5);
+	}
+
 	while (buffr)
 	{
 		buffr /= 16;

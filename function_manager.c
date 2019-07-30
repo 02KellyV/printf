@@ -43,9 +43,12 @@ int _switch(char c, va_list arg)
 		case 'o':
 			cont += print_unsign(arg, 8);
 			break;
+<<<<<<< HEAD
 		case 'p':
 			cont += print_ptr(arg);
 			break;
+=======
+>>>>>>> master
 		case 'r':
 			cont += print_rev(arg);
 			break;
