@@ -20,6 +20,11 @@ int print_ptr(va_list arg)
 	count = 1;
 	i = 0;
 
+	if (!dec)
+	{
+		_puts("(neil)");
+		return (5);
+	}
 	while (buffr)
 	{
 		buffr /= 16;
@@ -29,16 +34,10 @@ int print_ptr(va_list arg)
 	while (dec > 0)
 	{
 		n = (dec % 16);
-
 		if (n >= 0 && n <= 9)
-		{
 			c[count] = ((char)(n + '0'));
-		}
-
 		else
-		{
 			c[count] = ((char)(n + 'W'));
-		}
 		count--;
 		dec /= 16;
 	}
