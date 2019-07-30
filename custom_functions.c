@@ -55,9 +55,12 @@ void _puts(char *str)
 char *convert_to(char representation[], unsigned int num, int base)
 {
 	char *ptr;
+	static char buffer[128];
 	int mod = 0;
 
-	ptr = malloc(sizeof(char) * _strlen(representation));
+	ptr = &buffer[127];
+	*ptr = '\0';
+
 	do {
 		mod = num % base;
 		*--ptr = representation[mod];
