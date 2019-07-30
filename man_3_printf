@@ -1,0 +1,44 @@
+.TH "29 July 2019" "1.0" "_printf man page"
+.SH NAME
+_printf
+.SH SYNOPSIS
+#include "holberton.h"
+
+#include <stdio.h>
+
+#include <stdarg.h>
+
+.SH DESCRIPTION
+Prototype: int _printf(const char *format, ...);
+_printf: this functions prints, like function of printf
+
+.SS Return
+_printf returns num of characteres printed
+
+Validate: null byte used to end strings or negative value for errors
+
+.SS Format string
+Ordinary character (not%) and specification to coversions whit %
+
+.SS The conversion specifiers
+The character % is followed by the following specifiers:
+       i,d The int argument to signed decimal
+       u The unsigned int argument to unsigned decimal
+       o The unsigned int argument to unsigned octal
+       X,x Prints hexadecimal value with upper case letters
+       S prints the string where Non printable characters 
+       
+.SS The flag characters
+       The character % is followed by zero or more of the following flags:
+       #      The value should be converted to an "alternate form".
+       ' '    (a space) A blank should be left before a positive number
+       (or empty string) produced by a signed conversion.
+       +      A sign (+ or -) should always be placed before a number produced
+       by a signed conversion.  By default a  sign  is used only for negative
+       numbers.  A + overrides a space if both are used.     
+
+.SH See printf 
+
+.SH AUTHOR
+Luis Diaz, Kelly Villa
+Cohort-9, MDE - COL
