@@ -68,6 +68,12 @@ int print_string(va_list arg)
 	int cont = 0;
 
 	s = va_arg(arg, char *);
+	if (!s)
+	{
+		s = "(null)";
+		_puts(s);
+		return (_strlen(s) - 1);
+	}
 	_puts(s);
 	cont = _strlen(s);
 	return (cont);
