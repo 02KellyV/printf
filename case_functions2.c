@@ -64,6 +64,13 @@ int print_rot13(va_list arg)
 	char ROT13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 	char *s = va_arg(arg, char *);
 
+	if (!s)
+	{
+		s = "(null)";
+		_puts(s);
+		return (_strlen(s) - 1);
+	}
+
 	for (j = 0; s[j]; j++)
 	{
 		if (s[j] < 'A' || (s[j] > 'Z' && s[j] < 'a') || s[j] > 'z')
@@ -93,6 +100,8 @@ int print_rev(va_list arg)
 	if (!s)
 	{
 		s = "(null)";
+		_puts(s);
+		return (_strlen(s) - 1);
 	}
 
 	while (s[i])
