@@ -66,9 +66,7 @@ int print_rot13(va_list arg)
 
 	if (!s)
 	{
-		s = "(null)";
-		_puts(s);
-		return (_strlen(s) - 1);
+		return (-1);
 	}
 
 	for (j = 0; s[j]; j++)
@@ -99,9 +97,7 @@ int print_rev(va_list arg)
 
 	if (!s)
 	{
-		s = "(null)";
-		_puts(s);
-		return (_strlen(s) - 1);
+		return (-1);
 	}
 
 	while (s[i])
