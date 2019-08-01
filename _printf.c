@@ -54,10 +54,12 @@ int loop_format(va_list arg, const char *string)
 				{
 					i++;
 					aux = string[i];
+					if (aux == '%')
+						flag--;
 					cont = cont + cont_fm;
 				} else if (cont_fm == -1)
 				{
-					return (-1);
+					cont += _putchar('%');
 				}
 			}
 		}
