@@ -43,7 +43,7 @@ int loop_format(va_list arg, const char *string)
 			flag++;
 			aux = string[i];
 			if (aux == '\0')
-				return (-1);
+				return (cont);
 			if (aux == '%')
 			{
 				flag++;
