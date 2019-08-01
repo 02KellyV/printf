@@ -22,7 +22,7 @@ int print_ptr(va_list arg)
 
 	if (!dec)
 	{
-		_puts("(neil)");
+		_puts("(nil)");
 		return (5);
 	}
 	while (buffr)
