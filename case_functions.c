@@ -73,7 +73,7 @@ int print_string(va_list arg)
 	{
 		s = "(null)";
 		_puts(s);
-		return (_strlen(s) - 1);
+		return (_strlen(s));
 	}
 	_puts(s);
 	cont = _strlen(s);
