@@ -39,9 +39,10 @@ int loop_format(va_list arg, const char *string)
 
 		if (aux == '%')
 		{
-			i++;
-			flag++;
+			i++, flag++;
 			aux = string[i];
+			if (aux == '\0' && _strlen((char *)string) == 1)
+				return (-1);
 			if (aux == '\0')
 				return (cont);
 			if (aux == '%')
