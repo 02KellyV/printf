@@ -57,7 +57,7 @@ int loop_format(va_list arg, const char *string)
 					if (aux == '%')
 						flag--;
 					cont = cont + cont_fm;
-				} else if (cont_fm == -1)
+				} else if (cont_fm == -1 && aux != '\n')
 				{
 					cont += _putchar('%');
 				}
