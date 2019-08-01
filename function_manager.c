@@ -35,8 +35,6 @@ int _switch(char c, va_list arg)
 			cont += print_character(arg);
 			break;
 		case 'd':
-			cont += print_sign(arg, 10);
-			break;
 		case 'i':
 			cont += print_sign(arg, 10);
 			break;
