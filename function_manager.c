@@ -13,6 +13,8 @@ int function_manager(char c, va_list arg)
 	int cont = 0;
 
 	cont = _switch(c, arg);
+	if (c == 'p')
+		cont = print_ptr(arg);
 	return (cont);
 }
 /**
